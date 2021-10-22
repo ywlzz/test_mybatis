@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ywl.test_mybatis.mapper.StudentMapper">
+    <resultMap id="result" type="ywl.test_mybatis.entity.Student">
+        <result column="no" jdbcType="INTEGER" property="no" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+    </resultMap>
+
+    <select id="findAllStudent" resultType="ywl.test_mybatis.entity.Student">
+        select  * from student;
+    </select>
+
+    <select id="findStudentByno" resultType="ywl.test_mybatis.entity.Student">
+        select * from student where no=#{no};
+    </select>
+</mapper>
+
+
